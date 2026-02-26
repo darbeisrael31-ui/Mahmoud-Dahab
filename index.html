@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פלטפורמת השקעות</title>
+
+  <style>
+    body {
+      background-color: #000814;
+      color: #d4af37;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      direction: rtl;
+    }
+
+    h1 {
+      color: #00ff88;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #d4af37;
+      margin: 10px 0;
+    }
+
+    .profit {
+      font-size: 28px;
+      color: #00ff88;
+      margin-bottom: 40px;
+    }
+
+    button {
+      background-color: #00ff88;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const userData = {
+        name: "שם משתמש",
+        profit: 248000
+      };
+
+      const formatter = new Intl.NumberFormat("he-IL", {
+        style: "currency",
+        currency: "ILS"
+      });
+
+      document.getElementById("username").innerText = userData.name;
+      document.getElementById("profit").innerText =
+        "רווח: " + formatter.format(userData.profit);
+
+    });
+  </script>
+</head>
+
+<body>
+
+  <h1>פלטפורמת השקעות</h1>
+  <h2 id="username"></h2>
+  <div class="profit" id="profit"></div>
+
+  <button onclick="window.location.href='withdrawal.html'">
+    מעבר לדף המשיכה
+  </button>
+
+</body>
+</html>
